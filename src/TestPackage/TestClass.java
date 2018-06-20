@@ -68,7 +68,7 @@ public class TestClass {
 	@Test
 	public void postInExistentCountries() {
 		RestAssured.baseURI = "http://services.groupkt.com/country/createCountry";
-		String json = "{name: 'Test Country',alpha2_code: 'TC',alpha3_code: 'TCY'}";
+		String json = "{\"name\": \"Test Country\",\"alpha2_code\": \"TC\",\"alpha3_code\": \"TCY\"}";
 		ValidatableResponse response = RestAssured.given().when().header("Content-Type", "application/json").body(json)
 				.post().then();
 		response.statusCode(200);
